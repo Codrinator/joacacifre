@@ -4,20 +4,30 @@ pentru care cifra sutelor este egală cu suma cifrelor zecilor şi unităţilor.
 #include <math.h>
 using namespace std;
 int main(){
-    int uc, uc2;
-    int x, aux, sumcif;
+    int uc, uc2,aux;
+    int x=100;
     cout<<"Numerele cu proprietatea ceruta sunt: "<<endl;
-    for(x=100;x<=999;x++){
+    /* while(x<=999){
         aux=x;
         uc=x%10;
-        x=x/10;
-        x=floor(x);
+        x/=10;
         uc2=x%10;
-        sumcif=uc2+uc;
-        x=x/10;
-        x=floor(x);
-        if(x==sumcif)
+        x/=10;
+        if(x==uc+uc2)
             cout<<aux<<" ";
+        x=aux;
+        x++;
+    } */
+
+    for(x=100; x<=999; x++){
+        aux=x;
+        uc=x%10;
+        x/=10;
+        uc2=x%10;
+        x/=10;
+        if(x==uc+uc2)
+            cout<<aux<<" ";
+        x=aux;
     }
-return 0;
-}
+    return 0;
+    }
